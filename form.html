@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conección a la reunión</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Conección a la reunión</h1>
+      </div>
+      <form id="connectionForm">
+        <div class="form-group">
+          <!-- <label for="nombre"
+            ><img src="./icons/form-icons/user-svgrepo-com.svg" class="icon"
+          /></label> -->
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre completo"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <!-- <label for="cedula"
+            ><img src="./icons/form-icons/user-svgrepo-com.svg" class="icon"
+          /></label> -->
+          <input
+            type="text"
+            id="cedula"
+            name="cedula"
+            placeholder="Cédula"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <!-- <label for="email"
+            ><img src="./icons/form-icons/speech-svgrepo-com.svg" class="icon"
+          /></label> -->
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ejemplo@correo.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <!-- <label for="phone"
+            ><img src="./icons/form-icons/speech-svgrepo-com.svg" class="icon"
+          /></label> -->
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Teléfono"
+            pattern="[0-9]{9,15}"
+            required
+          />
+        </div>
+
+        <button type="submit">Entrar ahora</button>
+        <p class="success-message" id="successMessage">
+          ¡Tu reserva ha sido realizada exitosamente!
+        </p>
+      </form>
+      <img src="./logo/logo.png" class="logo" alt="" />
+    </div>
+    <script src="form.js"></script>
+    <!-- 
+    <script>
+      const form = document.getElementById("connetionForm");
+      const successMessage = document.getElementById("successMessage");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evitar el envío real del formulario
+        successMessage.style.display = "block"; // Mostrar mensaje de éxito
+        // //   form.reset(); // Limpiar el formulario
+      });
+    </script> -->
+  </body>
+</html>
