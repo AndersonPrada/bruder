@@ -1,18 +1,21 @@
+require("dotenv").config(); // Cargar las variables de entorno desde .env
+
 const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root1234",
-  database: "bruder",
+  host: process.env.DB_HOST, // '15.235.85.112'
+  port: process.env.DB_PORT, // '3306'
+  user: process.env.DB_USER, // 'anderso1_bruderuser'
+  password: process.env.DB_PASS, // 'root1234bruder@'
+  database: process.env.DB_NAME, // 'anderso1_bruder'
 });
 
 connection.connect((err) => {
   if (err) {
-    console.error("Error conectando a la base de datos:", err);
+    console.error("Error de conexión: " + err.stack);
     return;
   }
-  console.log("Conectado a la base de datos Bruder");
+  console.log("Conectado a la base de datos con id " + connection.threadId);
 });
 
 module.exports = connection;
